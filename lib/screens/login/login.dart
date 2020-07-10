@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:jameiaapps/constants.dart';
+import 'package:jameiaapps/screens/sign_in/sign_in.dart';
 import 'package:jameiaapps/shared_ui/app_bar/shared_appBar.dart';
 import 'package:jameiaapps/shared_ui/button/gradient_button.dart';
 
@@ -163,7 +164,10 @@ class _LoginState extends State<Login> {
           style: TextStyle(color:Color(0XFF313131), fontSize: 14),
         ),
         FlatButton(
-          onPressed: () {},
+          onPressed:  () =>  Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => SignIn())) ,
           child: Text(
             'سجل الأن',
             style: TextStyle(fontSize: 14, color: Color(0XFF9013FE)),
