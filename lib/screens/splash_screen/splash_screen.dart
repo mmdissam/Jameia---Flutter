@@ -3,9 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:jameiaapps/constants.dart';
 import 'package:jameiaapps/screens/login/login.dart';
 import 'package:jameiaapps/screens/on_boarding/on_boarding.dart';
-
-import 'componants/circle_purple.dart';
-import 'componants/circle_transparent.dart';
+import 'components/circle_purple.dart';
+import 'components/circle_transparent.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

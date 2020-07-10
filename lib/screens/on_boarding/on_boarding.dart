@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:jameiaapps/constants.dart';
+import 'package:jameiaapps/screens/login/login.dart';
 import 'package:jameiaapps/utilities/helpers.dart';
 
 class OnBoarding extends StatelessWidget {
@@ -79,6 +80,10 @@ class OnBoarding extends StatelessWidget {
     return Align(
       alignment: Alignment.bottomLeft,
       child: InkWell(
+        onTap: () =>  Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => Login())),
         child: Container(
           width: 125,
           height: 50,
