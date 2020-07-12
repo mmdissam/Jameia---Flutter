@@ -142,6 +142,36 @@ class _LoginState extends State<Login> {
       ),
     );
   }
+  Widget _rowOfRememberAndForgetPassword(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Row(
+          children: <Widget>[
+            Checkbox(
+              checkColor: Color(0XFF6155CC),
+              activeColor: Colors.white,
+              value: checkVal,
+              onChanged: (bool value) {
+                setState(() {
+                  checkVal = value;
+                });
+              },
+            ),
+            Text('تذكر كلمة المرور',style: TextStyle(color: Color(0XFF313131)),),
+          ],
+        ),
+        FlatButton(
+          onPressed: () {},
+          child: Text(
+            'نسيت كلمة المرور',
+            style: TextStyle(fontSize: 14, color: Color(0XFF313131)),
+          ),
+        ),
+      ],
+    );
+  }
+
 
   Widget _signInButton(BuildContext context) {
     return Padding(
@@ -172,33 +202,4 @@ class _LoginState extends State<Login> {
     );
   }
 
- Widget _rowOfRememberAndForgetPassword(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        Row(
-          children: <Widget>[
-            Checkbox(
-              checkColor: Color(0XFF6155CC),
-              activeColor: Colors.white,
-              value: checkVal,
-              onChanged: (bool value) {
-                setState(() {
-                  checkVal = value;
-                });
-              },
-            ),
-            Text('تذكر كلمة المرور',style: TextStyle(color: Color(0XFF313131)),),
-          ],
-        ),
-        FlatButton(
-          onPressed: () {},
-          child: Text(
-            'نسيت كلمة المرور',
-            style: TextStyle(fontSize: 14, color: Color(0XFF313131)),
-          ),
-        ),
-      ],
-    );
- }
 }

@@ -3,7 +3,7 @@ import 'package:jameiaapps/shared_ui/app_bar/shared_appBar.dart';
 import 'package:jameiaapps/shared_ui/button/gradient_button.dart';
 
 import 'file:///C:/Users/NiMo-/AndroidStudioProjects/jameia_apps/lib/utilities/constants.dart';
-import 'package:jameiaapps/sign_in/mobile_verification.dart';
+import 'package:jameiaapps/sign_in/enter_your_mobile_number.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -27,15 +27,12 @@ class _SignInState extends State<SignIn> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Padding(
-                        padding: EdgeInsets.only(bottom: kDefaultPadding),
-                        child: gradientButton(
-                          context,
-                          'تسجيل',
-                            _onPress,
-                        ),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: kDefaultPadding),
+                      child: gradientButton(
+                        context,
+                        'تسجيل',
+                          _onPress,
                       ),
                     ),
                   ],
@@ -49,9 +46,9 @@ class _SignInState extends State<SignIn> {
   }
 
   void _onPress(){
-    Navigator.pushReplacement(
+    Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) => MobileVerification()));
+            builder: (context) => EnterYourMobileNumber()));
   }
 }

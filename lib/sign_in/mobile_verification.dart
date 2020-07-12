@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:jameiaapps/shared_ui/app_bar/shared_appBar.dart';
 import 'package:jameiaapps/shared_ui/button/gradient_button.dart';
 import 'package:jameiaapps/utilities/constants.dart';
@@ -29,51 +30,27 @@ class _MobileVerificationState extends State<MobileVerification> {
     return Scaffold(
       body: Column(
         children: <Widget>[
-          SharedAppBar(title: 'التحقق من الجوال', subtitle: ''),
+          SharedAppBar(title: 'التحقق من رقم الجوال', subtitle: ''),
           Expanded(
             child: Container(
-              width: double.infinity,
               height: double.infinity,
               color: kBackgroundColor,
-              child: Padding(
-                padding: const EdgeInsets.all(kDefaultPadding),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        _columnTextVerificationMobile(context),
-                        Column(
-                          children: <Widget>[
-                            Text(
-                              'أدخل رقم الجوال ',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: kDefaultPadding * 5),
-                              child: TextField(
-                                keyboardType: TextInputType.phone,
-                                textAlign: TextAlign.center,
-                                decoration: InputDecoration(
-                                  enabledBorder:
-                                  UnderlineInputBorder(borderSide: BorderSide(color: Color(0XFF707070))),
-                                ),
-                                controller: _controller,
-                                onSubmitted: (String value) {},
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: kDefaultPadding * 4),
-                          child: gradientButton(context, 'إرسال', () {}),
-                        ),
-                      ],
-                    ),
+              child: SingleChildScrollView(
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.75,
+                  padding:
+                  const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      _columnTextVerificationMobile(context),
+                      _enterYourCode(context),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: kDefaultPadding),
+                        child: gradientButton(context, 'إرسال', () {}),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -93,15 +70,66 @@ class _MobileVerificationState extends State<MobileVerification> {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
           SizedBox(height: kDefaultPadding / 2),
           Text(
-            'سيتم ارسال رسالة تحتوي على كود',
-            style: TextStyle(fontSize: 12, color: Color(0XFF9B9B9B)),
-          ),
-          Text(
-            ' الى رقم الجوال المدخل',
+           'أدخل الكود الذي تم استلامه',
             style: TextStyle(fontSize: 12, color: Color(0XFF9B9B9B)),
           ),
         ],
       ),
     );
   }
+
+  Widget _enterYourCode(BuildContext context) {
+    return Transform.translate(
+      offset: Offset(0, -70),
+      child: Column(
+        children: <Widget>[
+         _codeNumber(context),
+          _rowOfCodeMessage(context),
+        ],
+      ),
+    );
+  }
+  Widget _rowOfCodeMessage(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text(
+         'لم أستلم رسالة الكود؟',
+          style: TextStyle(color:Color(0XFF6155CC), fontSize: 12),
+        ),
+        SizedBox(height: kDefaultPadding*5),
+        FlatButton(
+          onPressed:  () {},
+          child: Text(
+            'ارسال  مرة اخرى',
+            style: TextStyle(color: Color(0XFF6155CC),fontSize: 12),
+          ),
+        ),
+      ],
+    );
+  }
+
+ Widget _codeNumber(BuildContext context) {
+    return  Padding(
+      padding:
+      const EdgeInsets.symmetric(horizontal: kDefaultPadding * 5),
+      child: TextField(
+//              keyboardType: TextInputType.phone,
+        keyboardType: TextInputType.numberWithOptions(decimal: true),
+        inputFormatters: [BlacklistingTextInputFormatter(new RegExp('[-]'))],
+        textAlign: TextAlign.center,
+        style: TextStyle(
+            color: Color(0XFF313131),
+            fontWeight: FontWeight.bold,
+            fontSize: 14),
+        decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Color(0XFF707070))),
+        ),
+        controller: _controller,
+        onSubmitted: (value) { },
+      ),
+    );
+ }
+
 }

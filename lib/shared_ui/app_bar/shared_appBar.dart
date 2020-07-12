@@ -27,7 +27,7 @@ class SharedAppBar extends StatelessWidget {
               child: ClipRect(child: CustomPaint(painter: CirclePainter())),
             ),
           ),
-          ArrowBack(),
+          ArrowBack(context: context),
           TitleAndSubTitle(title: title,subtitle: subtitle,),
         ],
       ),

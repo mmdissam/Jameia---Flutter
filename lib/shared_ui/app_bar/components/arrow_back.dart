@@ -3,6 +3,9 @@ import 'file:///C:/Users/NiMo-/AndroidStudioProjects/jameia_apps/lib/utilities/c
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ArrowBack extends StatelessWidget {
+  final BuildContext context;
+
+  const ArrowBack({Key key, this.context}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,7 +21,7 @@ class ArrowBack extends StatelessWidget {
           ),
           child: IconButton(
             icon: SvgPicture.asset('assets/icons/arrow_back.svg'),
-            onPressed:  (){},
+            onPressed:(){}
           ),
         ),
       ),
