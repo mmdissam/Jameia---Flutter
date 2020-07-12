@@ -2,10 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:jameiaapps/constants.dart';
 import 'package:jameiaapps/lang/app_locale.dart';
-import 'package:jameiaapps/screens/login/login.dart';
-import 'package:jameiaapps/screens/on_boarding/on_boarding.dart';
+import 'file:///C:/Users/NiMo-/AndroidStudioProjects/jameia_apps/lib/login/login.dart';
 
 void main() {
   runApp(MyApp());

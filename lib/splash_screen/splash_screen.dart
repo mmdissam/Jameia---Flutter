@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:jameiaapps/constants.dart';
-import 'package:jameiaapps/screens/login/login.dart';
-import 'package:jameiaapps/screens/on_boarding/on_boarding.dart';
+import 'file:///C:/Users/NiMo-/AndroidStudioProjects/jameia_apps/lib/utilities/constants.dart';
+import 'file:///C:/Users/NiMo-/AndroidStudioProjects/jameia_apps/lib/login/login.dart';
+import 'file:///C:/Users/NiMo-/AndroidStudioProjects/jameia_apps/lib/on_boarding/on_boarding.dart';
 import 'components/circle_purple.dart';
 import 'components/circle_transparent.dart';
 

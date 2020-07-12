@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jameiaapps/constants.dart';
+import 'file:///C:/Users/NiMo-/AndroidStudioProjects/jameia_apps/lib/utilities/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ArrowBack extends StatelessWidget {

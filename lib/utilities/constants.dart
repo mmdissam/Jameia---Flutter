@@ -13,12 +13,4 @@ const kGradient = LinearGradient(
     Color(0xFF8F67E8),
   ],
 );
-const kGradient1 = LinearGradient(
-  begin: Alignment.bottomRight,
-  end: Alignment.topLeft,
-  colors: [
-    Color(0xFF1357CC),
-    Color(0xFF8F67E8),
-  ],
-);
 const kDefaultPadding = 20.0;

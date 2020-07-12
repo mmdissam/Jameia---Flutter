@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:jameiaapps/constants.dart';
-import 'package:jameiaapps/screens/login/login.dart';
+import 'file:///C:/Users/NiMo-/AndroidStudioProjects/jameia_apps/lib/utilities/constants.dart';
+import 'file:///C:/Users/NiMo-/AndroidStudioProjects/jameia_apps/lib/login/login.dart';
 import 'package:jameiaapps/utilities/helpers.dart';
 
 class OnBoarding extends StatelessWidget {

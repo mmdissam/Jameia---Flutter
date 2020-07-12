@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:jameiaapps/constants.dart';
-import 'package:jameiaapps/screens/sign_in/sign_in.dart';
+import 'file:///C:/Users/NiMo-/AndroidStudioProjects/jameia_apps/lib/utilities/constants.dart';
+import 'file:///C:/Users/NiMo-/AndroidStudioProjects/jameia_apps/lib/sign_in/sign_in.dart';
 import 'package:jameiaapps/shared_ui/app_bar/shared_appBar.dart';
 import 'package:jameiaapps/shared_ui/button/gradient_button.dart';
 
@@ -98,11 +98,6 @@ class _LoginState extends State<Login> {
               OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
           focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.blue.shade700)),
-//          labelText: 'البريد الالكتروني',
-//          labelStyle: TextStyle(
-//            color: Color(0XFF636363),
-//            fontSize: 12,
-//          ),
         ),
       ),
     );
@@ -151,7 +146,7 @@ class _LoginState extends State<Login> {
   Widget _signInButton(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: kDefaultPadding/2),
-      child: gradientButton(context,'تسجيل الدخول'),
+      child: gradientButton(context,'تسجيل الدخول',(){}),
     );
   }
 
