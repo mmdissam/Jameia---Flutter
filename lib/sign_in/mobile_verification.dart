@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:jameiaapps/home/home.dart';
 import 'package:jameiaapps/shared_ui/app_bar/shared_appBar.dart';
 import 'package:jameiaapps/shared_ui/button/gradient_button.dart';
 import 'package:jameiaapps/utilities/constants.dart';
@@ -48,7 +49,7 @@ class _MobileVerificationState extends State<MobileVerification> {
                       _enterYourCode(context),
                       Padding(
                         padding: const EdgeInsets.only(bottom: kDefaultPadding),
-                        child: gradientButton(context, 'إرسال', () {}),
+                        child: gradientButton(context, 'تم', _onPress),
                       ),
                     ],
                   ),
@@ -131,5 +132,11 @@ class _MobileVerificationState extends State<MobileVerification> {
       ),
     );
  }
+  void _onPress(){
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => Home()));
+  }
 
 }
