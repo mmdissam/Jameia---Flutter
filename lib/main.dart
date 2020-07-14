@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:jameiaapps/home/home.dart';
 import 'package:jameiaapps/lang/app_locale.dart';
 import 'file:///C:/Users/NiMo-/AndroidStudioProjects/jameia_apps/lib/login/login.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.cairoTextTheme(),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Login(),
+      home: Home(),
       localizationsDelegates: [
         // To make all the widget and Material and my edits change according to the language
         GlobalMaterialLocalizations.delegate,

@@ -4,6 +4,7 @@ import 'package:jameiaapps/home/home_tab/home_tab.dart';
 import 'package:jameiaapps/utilities/constants.dart';
 
 import 'components/app_bar.dart';
+import 'home_tab/profile.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -16,19 +17,14 @@ class _HomeState extends State<Home> {
    HomeTab(),
     Center(child: Container(child: Text('Text1'))),
     Center(child: Container(child: Text('Text2'))),
-    Center(child: Container(child: Text('Text3'))),
+  Profile(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body: Stack(
-        children: <Widget>[
-          AppBarCustomize(),
-          _pageOptions[_selectedPage],
-        ],
-      ),
+      body:  _pageOptions[_selectedPage],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedPage,
         unselectedIconTheme: IconThemeData(color: Color(0XFF9B9B9B), size: 30),
@@ -40,11 +36,11 @@ class _HomeState extends State<Home> {
         },
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home), title: Text('')),
-          BottomNavigationBarItem(icon: Icon(Icons.history), title: Text('')),
+              icon: Icon(Icons.home),title: Text('')),
+          BottomNavigationBarItem(icon: Icon(Icons.history),title: Text('')),
           BottomNavigationBarItem(
-              icon: Icon(Icons.notifications_none), title: Text('')),
-          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('')),
+              icon: Icon(Icons.notifications_none),title: Text('')),
+          BottomNavigationBarItem(icon: Icon(Icons.person),title: Text('')),
         ],
       ),
     );

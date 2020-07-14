@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jameiaapps/home/components/app_bar.dart';
 import 'package:jameiaapps/utilities/constants.dart';
 
 class HomeTab extends StatefulWidget {
@@ -11,6 +12,15 @@ class HomeTab extends StatefulWidget {
 class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: kBackgroundColor,
+      body:Stack(children: <Widget>[
+        AppBarCustomize(),
+        _content(context),
+      ],),
+    );
+  }
+  Widget _content(BuildContext context) {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
@@ -22,19 +32,20 @@ class _HomeTabState extends State<HomeTab> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             _title(context),
-          Expanded(
-            child: ListView.builder(
-              padding: EdgeInsets.only(top: kDefaultPadding/2,bottom: kDefaultPadding),
-              scrollDirection: Axis.vertical,
-              itemCount:9,
-              itemBuilder: (context, index) => _listOfAssociations(context),
+            Expanded(
+              child: ListView.builder(
+                padding: EdgeInsets.only(top: kDefaultPadding/2,bottom: kDefaultPadding),
+                scrollDirection: Axis.vertical,
+                itemCount:9,
+                itemBuilder: (context, index) => _listOfAssociations(context),
+              ),
             ),
-          ),
           ],
         ),
       ),
     );
   }
+
 
   Widget _title(BuildContext context) {
     return Text(
@@ -144,4 +155,6 @@ class _HomeTabState extends State<HomeTab> {
           onPressed: () {}),
     );
   }
+
+
 }

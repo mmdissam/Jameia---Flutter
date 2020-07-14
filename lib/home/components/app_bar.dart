@@ -45,7 +45,7 @@ class AppBarCustomize extends StatelessWidget {
                     children: <Widget>[
                       // Adobe XD layer: 'Group 20' (group)
                       IconButton(
-                          icon: SvgPicture.asset('assets/icons/alert.svg'),
+                          icon: SvgPicture.asset('assets/icons/alert_notification.svg'),
                           onPressed: () {}),
                       Stack(
                         children: <Widget>[
