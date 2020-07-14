@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:jameiaapps/home/home_tab/history.dart';
 import 'package:jameiaapps/home/home_tab/home_tab.dart';
 import 'package:jameiaapps/utilities/constants.dart';
-
-import 'components/app_bar.dart';
 import 'home_tab/profile.dart';
 
 class Home extends StatefulWidget {
@@ -15,9 +14,10 @@ class _HomeState extends State<Home> {
   int _selectedPage = 0;
   final _pageOptions = [
    HomeTab(),
-    Center(child: Container(child: Text('Text1'))),
+    History(),
     Center(child: Container(child: Text('Text2'))),
   Profile(),
+
   ];
 
   @override
