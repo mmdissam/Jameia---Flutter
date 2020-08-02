@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:jameiaapps/home/home_tab/history.dart';
-import 'package:jameiaapps/home/home_tab/home_tab.dart';
+
 import 'package:jameiaapps/utilities/constants.dart';
+
+import 'home_tab/alerts.dart';
+import 'home_tab/history.dart';
+import 'home_tab/home_tab.dart';
 import 'home_tab/profile.dart';
+
 
 class Home extends StatefulWidget {
   @override
@@ -13,18 +17,17 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _selectedPage = 0;
   final _pageOptions = [
-   HomeTab(),
+    HomeTab(),
     History(),
-    Center(child: Container(child: Text('Text2'))),
-  Profile(),
-
+    Alerts(),
+    Profile(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body:  _pageOptions[_selectedPage],
+      body: _pageOptions[_selectedPage],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedPage,
         unselectedIconTheme: IconThemeData(color: Color(0XFF9B9B9B), size: 30),
@@ -35,12 +38,11 @@ class _HomeState extends State<Home> {
           });
         },
         items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('')),
+          BottomNavigationBarItem(icon: Icon(Icons.history), title: Text('')),
           BottomNavigationBarItem(
-              icon: Icon(Icons.home),title: Text('')),
-          BottomNavigationBarItem(icon: Icon(Icons.history),title: Text('')),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.notifications_none),title: Text('')),
-          BottomNavigationBarItem(icon: Icon(Icons.person),title: Text('')),
+              icon: Icon(Icons.notifications_none), title: Text('')),
+          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('')),
         ],
       ),
     );
